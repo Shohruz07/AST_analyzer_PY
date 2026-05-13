@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerability Insight Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --accent: #58a6ff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 250px;
+            background: #0d1117;
+            color: #c9d1d9;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 12px;
+            font-family: 'Fira Code', monospace;
+            resize: vertical;
+        }
+
+        button {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
+        button:hover {
+            background: #2ea043;
+        }
+
+        button.export {
+            background: #1f6feb;
+        }
+
+        button.export:hover {
+            background: #388bfd;
+        }
+
+        .vuln-card {
+            background: #21262d;
+            border-left: 4px solid;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .critical {
+            border-color: #f85149;
+        }
+
+        .high {
+            border-color: #d29922;
+        }
+
+        .medium {
+            border-color: #e3b341;
+        }
+
+        .low {
+            border-color: #58a6ff;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge.critical {
+            background: #f8514933;
+            color: #f85149;
+        }
+
+        .badge.high {
+            background: #d2992233;
+            color: #d29922;
+        }
+
+        .flow-container {
+            background: #0d1117;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+            overflow-x: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Vulnerability Insight Analyzer</h1>
+        <p style="color: #8b949e; margin-top: 0;">SAST-движок: Taint-Tracking + OWASP Top 10 Patterns</p>
+
+        <div class="panel">
+            <textarea id="code-input" placeholder="Вставьте Python-код..."></textarea>
+            <div style="margin-top: 10px;">
+                <button onclick="analyzeCode()">🚀 Анализ</button>
+                <button class="export" onclick="exportJSON()">📥 JSON</button>
+                <button class="export" onclick="exportSARIF()">📥 SARIF</button>
+            </div>
+        </div>
+
+        <div class="panel" id="results-panel" style="display:none;">
+            <h2>📋 Результаты</h2>
+            <div id="summary" style="margin-bottom: 15px; color: #8b949e;"></div>
+            <div id="vuln-list"></div>
+            <h3 style="margin-top: 20px;">🔄 Визуализация путей данных</h3>
+            <div id="flow-diagram" class="flow-container"></div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: false, theme: 'dark', flowchart: { curve: 'basis', padding: 20 } });
+
+        async function analyzeCode() {
+            const code = document.getElementById('code-input').value;
+            if (!code.trim()) return alert('Введите код');
+            const res = await fetch('/api/analyze', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code })
+            });
+            if (!res.ok) { const err = await res.json(); return alert(`Ошибка: ${err.detail}`); }
+            const data = await res.json();
+            renderResults(data.vulnerabilities);
+        }
+
+        function renderResults(vulns) {
+            document.getElementById('results-panel').style.display = 'block';
+            const list = document.getElementById('vuln-list');
+            const summary = document.getElementById('summary');
+            const flowDiv = document.getElementById('flow-diagram');
+            list.innerHTML = ''; flowDiv.innerHTML = '';
+
+            const counts = { critical: 0, high: 0, medium: 0, low: 0 };
+            vulns.forEach(v => counts[v.severity]++);
+            summary.innerHTML = `Найдено: <b>${vulns.length}</b> | 🔴 ${counts.critical}  ${counts.high} 🟡 ${counts.medium} 🔵 ${counts.low}`;
+
+            vulns.forEach(v => {
+                const card = document.createElement('div');
+                card.className = `vuln-card ${v.severity}`;
+                card.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <strong>${v.category || v.name}</strong>
+                        <span class="badge ${v.severity}">${v.severity}</span>
+                    </div>
+                    <p style="margin: 6px 0; color: #c9d1d9;">${v.description}</p>
+                    <div style="color: #8b949e; font-size: 0.85em;">
+                        📍 Строка: <b>${v.line}</b> | 🔧 ${v.remediation}<br>
+                         Уверенность: ${(v.confidence * 100).toFixed(0)}%
+                    </div>`;
+                list.appendChild(card);
+            });
+
+            // Генерация Mermaid графа
+            if (vulns.length > 0 && vulns[0].flow) {
+                let mm = 'graph LR\n';
+                vulns.slice(0, 4).forEach((v, i) => {
+                    let nodeId = `V${i}_SRC`;
+                    mm += `  ${nodeId}["🚩 ${v.source}"]\n`;
+                    let prev = nodeId;
+
+                    (v.flow || []).forEach((step, j) => {
+                        let stepId = `V${i}_S${j}`;
+                        let label = step.step || "Операция";
+                        let line = step.line || "?";
+                        mm += `  ${prev} -->|"L${line}"| ${stepId}["${label}"]\n`;
+                        prev = stepId;
+                    });
+                    mm += `  classDef src fill:#f8514933,stroke:#f85149,color:#fff;\n`;
+                    mm += `  class ${nodeId} src;\n`;
+                });
+                flowDiv.innerHTML = `<div class="mermaid">${mm}</div>`;
+                mermaid.run();
+            } else {
+                flowDiv.innerHTML = '<div style="padding:20px; color:#8b949e;">✅ Уязвимостей не найдено</div>';
+            }
+        }
+
+        async function exportFormat(fmt) {
+            const code = document.getElementById('code-input').value;
+            if (!code.trim()) return alert('Введите код');
+            const res = await fetch(`/api/export/${fmt.toLowerCase()}`, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code })
+            });
+            const blob = new Blob([JSON.stringify(await res.json(), null, 2)], { type: 'application/json' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+            a.download = `report.${fmt.toLowerCase()}`; a.click();
+        }
+        function exportJSON() { exportFormat('json'); }
+        function exportSARIF() { exportFormat('sarif'); }
+    </script>
+</body>
+
+</html>
