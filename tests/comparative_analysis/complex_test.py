@@ -5,7 +5,7 @@ from flask import request, render_template
 
 class VulnerableApp:
     def __init__(self):
-        # Тест 1: Hardcoded Secret (Должны найти все)
+        # Тест 1: Hardcoded Secret 
         self.api_key = "sk_live_12345_secret_key"
 
     def login(self):
@@ -15,12 +15,12 @@ class VulnerableApp:
         # Сохраняем в состояние класса (OOP State)
         self.current_user = user_id
         
-        # Тест 2: Weak Crypto (Должны найти Bandit и мы)
+        # Тест 2: Weak Crypto 
         weak_hash = hashlib.md5(user_id.encode()).hexdigest()
 
     def get_profile(self):
         # Чтение из состояния класса (Межпроцедурный трекинг)
-        # Bandit это ПРОПУСТИТ, так как не видит связи между методами
+        
         query = f"SELECT * FROM users WHERE id='{self.current_user}'"
         
         conn = sqlite3.connect(':memory:')
