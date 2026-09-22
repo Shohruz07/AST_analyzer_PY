@@ -103,7 +103,14 @@ class DataFlowAnalyzer(ast.NodeVisitor):
         self.func_returns_taint: Dict[str, Set[str]] = defaultdict(set)
 
     def analyze(self) -> List[dict]:
+        """Старый API: парсит и анализирует. Оставляем для совместимости."""
         tree = ast.parse(self.code)
+        return self.analyze_tree(tree)
+    
+    def analyze_tree(self, tree: ast.AST, source_code: str = None) -> List[dict]:
+        """НОВЫЙ API: анализ готового AST."""
+        if source_code is not None:
+            self.code = source_code   # для pattern_scan
         self.visit(tree)
         self._run_pattern_scan()
         return [v.__dict__ for v in self.vulnerabilities]

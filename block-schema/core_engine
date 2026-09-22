@@ -1,0 +1,41 @@
+graph TD
+    %% Стили
+    classDef input fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef logic fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef decision fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+    classDef output fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef storage fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+
+    Start([Вход: Узел AST]):::input --> CheckType{Тип узла?}:::decision
+
+    %% ========== БЛОК 1: ПРИСВАИВАНИЕ ==========
+    CheckType -- Присваивание --> A1[Присваивание]:::logic
+    A1 --> A2{Это Источник?<br/>request, input}:::decision
+    A2 -->|Да| A3[Пометить как Зараженный]:::logic
+    A2 -->|Нет| A4{Это Очиститель?<br/>int, escape}:::decision
+    A4 -->|Да| A5[Снять метку Заражения]:::logic
+    A4 -->|Нет| A6[Распространить метку]:::logic
+
+    %% ========== БЛОК 2: ВЫЗОВ ФУНКЦИИ ==========
+    CheckType -- Вызов --> B1[Вызов функции]:::logic
+    B1 --> B2{Это Опасная функция?<br/>execute, system, eval}:::decision
+    B2 -->|Да| B3{Аргументы<br/>Заражены?}:::decision
+    B3 -->|Да| B4[УЯЗВИМОСТЬ]:::output
+    B3 -->|Нет| B5[Пропустить]:::logic
+    B2 -->|Нет| B6[Обычный вызов]:::logic
+
+    %% ========== БЛОК 3: АТРИБУТ КЛАССА ==========
+    CheckType -- Атрибут --> C1[Атрибут класса]:::logic
+    C1 --> C2{Чтение или Запись?}:::decision
+    C2 -->|Запись| C3[Сохранить в<br/>Хранилище]:::storage
+    C2 -->|Чтение| C4[Восстановить из<br/>Хранилища]:::storage
+
+    %% ========== КОНЕЦ ==========
+    A3 --> End([Конец]):::input
+    A5 --> End
+    A6 --> End
+    B4 --> End
+    B5 --> End
+    B6 --> End
+    C3 --> End
+    C4 --> End

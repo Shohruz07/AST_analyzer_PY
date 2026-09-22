@@ -1,0 +1,25 @@
+graph TB
+    %% Стили
+    classDef blue fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef green fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef yellow fill:#fff9c4,stroke:#fbc02d,stroke-width:2px
+    classDef red fill:#ffebee,stroke:#c62828,stroke-width:2px
+
+    subgraph METHOD_A[Метод А: Запись]
+        A1["Присваивание: self.user = request.args.get('id')"]:::green
+        A1 --> A2[("Хранилище: Class State")]:::blue
+    end
+
+    subgraph STORAGE[Глобальное хранилище]
+        B1[("Dict: { 'MyClass': { 'user': Tainted } }")]:::blue
+    end
+
+    subgraph METHOD_B[Метод Б: Чтение]
+        C1["Использование: cursor.execute(self.user)"]:::green
+        C1 --> C2{"Проверка в Class State"}:::yellow
+        C2 -->|Найдено| C3["Восстановить метку Tainted"]:::green
+        C3 --> C4["Уязвимость!"]:::red
+    end
+
+    A2 -.->|Сохранение| B1
+    C2 -.->|Чтение| B1

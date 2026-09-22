@@ -1,0 +1,38 @@
+graph LR
+    %% Стили
+    classDef lib fill:#E3F2FD,stroke:#1565C0,stroke-width:2px;
+    classDef myCode fill:#E8F5E9,stroke:#2E7D32,stroke-width:3px;
+    classDef data fill:#f5f5f5,stroke:#333,stroke-dasharray: 5 5;
+
+    subgraph "🔵 Фундамент: Стандартная библиотека Python"
+        direction TB
+        Code["📄 Исходный код"]:::data
+        Parser["ast.parse()"]:::lib
+        Tree["AST Tree<br/>(Иерархия объектов Node)"]:::data
+    end
+
+    subgraph "🟢 Наш РАЗРАБОТКА: Анализатор безопасности"
+        direction TB
+        
+        subgraph "Архитектура обхода (Visitor Pattern)"
+            Visitor["Class DataFlowAnalyzer<br/>(наследник ast.NodeVisitor)"]:::myCode
+        end
+        
+        subgraph "Логика безопасности (Наши алгоритмы)"
+            Rules["База знаний:<br/>- SOURCES (источники)<br/>- SINKS (опасные функции)<br/>- SANITIZERS (очистка)"]:::myCode
+            Engine["Taint Propagation Engine<br/>(Распространение меток)"]:::myCode
+            StateMgr["Class State Memory<br/>(Межпроцедурный трекинг)"]:::myCode
+        end
+    end
+
+    Code --> Parser
+    Parser -->|"Генерирует структуру"| Tree
+    Tree -->|"Передача управления"| Visitor
+    
+    Visitor --> Rules
+    Visitor --> Engine
+    Visitor --> StateMgr
+    
+    style Parser stroke-width:4px
+    style Visitor stroke-width:4px
+    style Engine stroke-width:4px
