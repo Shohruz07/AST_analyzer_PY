@@ -1,7 +1,7 @@
 import ast
 import time
 from pathlib import Path
-from typing import Dict, List, Set
+from typing import Dict, List
 
 from app.analyzer import DataFlowAnalyzer
 from app.incremental.cache import CacheManager
@@ -26,22 +26,44 @@ class IncrementalAnalyzer:
             'time_total': 0.0,
         }
 
+    # ----------------------------------------------------------
     def _iter_py_files(self) -> List[Path]:
         files = []
         for f in self.root.rglob('*.py'):
             s = str(f)
-            if any(x in s for x in ['.venv', 'venv', '.ast_cache', '__pycache__', '.git']):
+            if any(x in s for x in ['.venv', 'venv', '.ast_cache',
+                                     '__pycache__', '.git']):
                 continue
             files.append(f)
         return files
 
-    # ----- FULL -----
+    def _reset_stats(self):
+        for k in self.stats:
+            self.stats[k] = 0 if k != 'time_total' else 0.0
+
+    def _ensure_import_graph(self, all_files):
+        """Строит import graph, если его нет в кэше."""
+        cached = self.cache_mgr.cache.import_graph
+        if cached:
+            self.import_graph.graph = cached
+            self.import_graph.reverse = self.cache_mgr.cache.reverse_import_graph
+            return
+        self.import_graph.build(all_files)
+        self.cache_mgr.cache.import_graph = self.import_graph.graph
+        self.cache_mgr.cache.reverse_import_graph = self.import_graph.reverse
+
+    # ----------------------------------------------------------
+    # FULL
+    # ----------------------------------------------------------
     def analyze_full(self) -> Dict[str, List[dict]]:
         print("[full] Scanning entire project...")
         t0 = time.time()
-        all_files = self._iter_py_files()
+        self._reset_stats()
 
+        all_files = self._iter_py_files()
         self.import_graph.build(all_files)
+        self.cache_mgr.cache.import_graph = self.import_graph.graph
+        self.cache_mgr.cache.reverse_import_graph = self.import_graph.reverse
 
         results = {}
         for f in all_files:
@@ -56,10 +78,16 @@ class IncrementalAnalyzer:
         self.cache_mgr.save()
         return results
 
-    # ----- INCREMENTAL -----
+    # ----------------------------------------------------------
+    # INCREMENTAL (committed changes vs base_ref)
+    # ----------------------------------------------------------
     def analyze_incremental(self, base_ref: str = 'HEAD~1') -> Dict[str, List[dict]]:
         print(f"[incremental] Diff vs {base_ref}...")
         t0 = time.time()
+        self._reset_stats()
+
+        all_files = self._iter_py_files()
+        self.stats['files_total'] = len(all_files)
 
         if not self.diff_resolver.is_git_repo():
             print("[incremental] Not a git repo, falling back to full")
@@ -67,23 +95,21 @@ class IncrementalAnalyzer:
 
         changed = self.diff_resolver.changed_files(base_ref)
         if not changed:
-            print("[incremental] No changes")
+            print("[incremental] No changes detected")
+            self.stats['files_scanned'] = 0
+            self.stats['files_cached'] = len(all_files)
             self.stats['time_total'] = time.time() - t0
             return self.cache_mgr.cache.results
 
         print(f"[incremental] Changed: {len(changed)} files")
-
-        all_files = self._iter_py_files()
-        self.import_graph.build(all_files)
+        self._ensure_import_graph(all_files)
 
         affected_rel = self.import_graph.get_affected_files(changed)
         affected_abs = {self.root / f for f in affected_rel}
-        # фильтруем те, что не существуют (удалённые)
         affected_abs = {f for f in affected_abs if f.exists()}
         print(f"[incremental] Affected: {len(affected_abs)} files")
 
         results = dict(self.cache_mgr.cache.results)
-        # Удалённые файлы убираем
         for k in list(results.keys()):
             if not Path(k).exists():
                 del results[k]
@@ -91,7 +117,6 @@ class IncrementalAnalyzer:
         for f in affected_abs:
             results[str(f)] = self._scan_file(f, use_cache=True)
 
-        self.stats['files_total'] = len(all_files)
         self.stats['files_scanned'] = len(affected_abs)
         self.stats['files_cached'] = len(all_files) - len(affected_abs)
         self.stats['time_total'] = time.time() - t0
@@ -101,18 +126,94 @@ class IncrementalAnalyzer:
         self.cache_mgr.save()
         return results
 
-    # ----- STAGED (pre-commit) -----
+    # ----------------------------------------------------------
+    # WORKING (uncommitted changes vs HEAD)
+    # ----------------------------------------------------------
+    def analyze_working(self) -> Dict[str, List[dict]]:
+        """Анализ uncommitted изменений (staged + unstaged vs HEAD)."""
+        print("[working] Diff vs HEAD (uncommitted)...")
+        t0 = time.time()
+        self._reset_stats()
+
+        all_files = self._iter_py_files()
+        self.stats['files_total'] = len(all_files)
+
+        if not self.diff_resolver.is_git_repo():
+            print("[working] Not a git repo, falling back to full")
+            return self.analyze_full()
+
+        changed = self.diff_resolver.uncommitted_files()
+        if not changed:
+            print("[working] No uncommitted changes")
+            self.stats['files_scanned'] = 0
+            self.stats['files_cached'] = len(all_files)
+            self.stats['time_total'] = time.time() - t0
+            return self.cache_mgr.cache.results
+
+        print(f"[working] Changed: {len(changed)} files")
+
+        # ⚡ КЭШ IMPORT GRAPH
+        self._ensure_import_graph(all_files)
+
+        affected_rel = self.import_graph.get_affected_files(changed)
+        affected_abs = {self.root / f for f in affected_rel if (self.root / f).exists()}
+        print(f"[working] Affected: {len(affected_abs)} files")
+
+        results = dict(self.cache_mgr.cache.results)
+        for k in list(results.keys()):
+            if not Path(k).exists():
+                del results[k]
+
+        for f in affected_abs:
+            results[str(f)] = self._scan_file(f, use_cache=True)
+
+        self.stats['files_scanned'] = len(affected_abs)
+        self.stats['files_cached'] = len(all_files) - len(affected_abs)
+        self.stats['time_total'] = time.time() - t0
+
+        for path, findings in results.items():
+            self.cache_mgr.put_results(Path(path), findings)
+        self.cache_mgr.save()
+        return results
+
+    # ----------------------------------------------------------
+    # STAGED (pre-commit)
+    # ----------------------------------------------------------
     def analyze_staged(self) -> Dict[str, List[dict]]:
+        t0 = time.time()
+        self._reset_stats()
+
+        all_files = self._iter_py_files()
+        self.stats['files_total'] = len(all_files)
+
         staged = self.diff_resolver.staged_files()
         print(f"[staged] {len(staged)} files")
-        results = {}
+
+        if not staged:
+            self.stats['files_cached'] = len(all_files)
+            self.stats['time_total'] = time.time() - t0
+            return self.cache_mgr.cache.results
+
+        results = dict(self.cache_mgr.cache.results)
+        scanned = 0
         for f in staged:
             p = self.root / f
             if p.exists():
-                results[f] = self._scan_file(p, use_cache=True)
+                results[str(p)] = self._scan_file(p, use_cache=True)
+                scanned += 1
+
+        self.stats['files_scanned'] = scanned
+        self.stats['files_cached'] = len(all_files) - scanned
+        self.stats['time_total'] = time.time() - t0
+
+        for path, findings in results.items():
+            self.cache_mgr.put_results(Path(path), findings)
+        self.cache_mgr.save()
         return results
 
-    # ----- SINGLE FILE -----
+    # ----------------------------------------------------------
+    # SINGLE FILE SCAN
+    # ----------------------------------------------------------
     def _scan_file(self, py_file: Path, use_cache: bool = True) -> List[dict]:
         tree = None
         source = None
@@ -145,6 +246,7 @@ class IncrementalAnalyzer:
             return []
         return findings
 
+    # ----------------------------------------------------------
     def print_stats(self):
         s = self.stats
         total = s['ast_hits'] + s['ast_misses']

@@ -6,6 +6,7 @@ CLI для AST Security Analyzer.
 Примеры:
     python cli.py --full --project .
     python cli.py --incremental --base=HEAD~1
+    python cli.py --working
     python cli.py --staged
     python cli.py --file path/to/file.py
 """
@@ -31,7 +32,9 @@ def main():
     parser.add_argument('--full', action='store_true',
                         help='Full analysis (ignore cache)')
     parser.add_argument('--incremental', action='store_true',
-                        help='Incremental analysis (git diff)')
+                        help='Incremental analysis (committed changes vs base)')
+    parser.add_argument('--working', action='store_true',
+                        help='Analyze uncommitted changes (git diff HEAD)')
     parser.add_argument('--staged', action='store_true',
                         help='Analyze staged files (pre-commit)')
     parser.add_argument('--base', default='HEAD~1',
@@ -57,13 +60,17 @@ def main():
         _output(results, args)
         return 1 if findings else 0
 
-    # ---- Incremental / full / staged ----
+    # ---- Project modes ----
     analyzer = IncrementalAnalyzer(args.project)
 
     if args.staged:
         if not args.quiet:
             print("[mode] staged (pre-commit)")
         results = analyzer.analyze_staged()
+    elif args.working:
+        if not args.quiet:
+            print("[mode] working (uncommitted)")
+        results = analyzer.analyze_working()
     elif args.incremental:
         if not args.quiet:
             print(f"[mode] incremental (base={args.base})")
@@ -99,7 +106,6 @@ def _output(results: dict, args):
     if not args.quiet:
         print(f"\n[result] Total findings: {total}")
 
-    # Краткая сводка
     if not args.quiet and total > 0:
         for path, findings in results.items():
             if findings:
