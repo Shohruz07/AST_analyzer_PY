@@ -1,0 +1,2702 @@
+{
+  "bench_project\\file_0.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_1.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_10.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_11.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_12.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_13.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_14.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_15.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_16.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_17.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_18.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_19.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_2.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_20.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_21.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_22.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_23.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_24.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_25.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_26.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_27.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_28.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_29.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_3.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_30.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_31.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_32.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_33.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_34.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_35.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_36.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_37.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_38.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_39.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_4.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_40.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_41.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_42.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_43.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_44.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_45.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_46.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_47.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_48.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_49.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_5.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_50.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_51.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_52.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_53.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_54.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_55.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_56.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_57.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_58.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_59.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_6.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_60.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_61.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_62.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_63.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_64.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_65.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_66.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_67.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_68.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_69.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_7.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_70.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_71.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_72.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_73.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_74.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_75.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_76.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_77.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_78.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_79.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_8.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_80.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_81.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_82.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_83.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_84.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_85.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_86.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_87.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_88.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_89.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_9.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_90.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_91.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_92.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_93.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_94.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_95.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_96.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_97.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_98.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ],
+  "bench_project\\file_99.py": [
+    {
+      "name": "Command Injection",
+      "severity": "critical",
+      "line": 7,
+      "source": "request.args.get",
+      "sink": "os.system",
+      "flow": [
+        {
+          "step": "Source: HTTP GET",
+          "line": "6"
+        },
+        {
+          "step": "Tainted: user_input",
+          "line": "6"
+        },
+        {
+          "step": "Sink: os.system",
+          "line": "7"
+        }
+      ],
+      "description": "Данные из 'HTTP GET' попадают в os.system",
+      "remediation": "subprocess.run([cmd], shell=False)",
+      "confidence": 0.95,
+      "category": "OS Command"
+    }
+  ]
+}
